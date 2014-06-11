@@ -1,20 +1,4 @@
-<h1>Choose your travel</h1>
-
-	<%= form_tag("/bookings/search", method: "get") do %>
-		<select name="departure_id">
-			<%= @places.each do |places| %>
-				<option value="<%= places.id %>"><%= places.name %></option>
-			<% end %>
-		</select>
-
-		<select name="destination_id">
-			<%= @places.each do |places| %>
-				<option value="<%= places.id %>"><%= places.name %></option>
-			<% end %>
-		</select>
-		<%= submit_tag("Search") %>
-	<% end %>
-
+<h1> Choose your teleporter </h1>
 
 <table id="teleporters">
 	<thead>
