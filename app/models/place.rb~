@@ -1,0 +1,9 @@
+class Place < ActiveRecord::Base
+	def change
+    create_table :place do |t|
+      t.string :name
+ 
+      t.timestamps
+    end
+  end
+end
