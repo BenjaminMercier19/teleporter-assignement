@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140611085107) do
+ActiveRecord::Schema.define(version: 20140611104021) do
 
   create_table "places", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "teleporters", force: true do |t|
+    t.integer  "number"
+    t.string   "departure"
+    t.string   "destination"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

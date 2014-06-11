@@ -9,3 +9,7 @@
 5.times do |i|
   Place.create(name: "Place ##{i}")
 end
+
+@places = Place.all
+
+Teleporter.create(number: 0, departure: @places.first.id, destination: @places.last.id)

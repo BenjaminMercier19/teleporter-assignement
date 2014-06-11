@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+5.times do |i|
+  Place.create(name: "Place ##{i}")
+end
+
+@places = Place.all
+
+Teleporter.create(number: 0, departure: @places.first.name, destination: @places.last.name)
