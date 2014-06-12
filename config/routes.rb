@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'bookings/new_booking/:id', , to: 'bookings#new_booking', as: 'booking'
+
+  get 'bookings/show/:id', to: 'bookings#show', as: 'teleporter' 
+
   get 'bookings/search'
 
   get 'bookings/index'

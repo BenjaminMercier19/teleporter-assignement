@@ -3,7 +3,7 @@
 <table id="teleporters">
 	<thead>
 		<tr>
-			<th id="teleport_number_header"> From </th>
+			<th id="teleport_number_header"> Teleport number </th>
 			<th id="from_header"> From </th>
 			<th id="to_header"> To </th>
 			<th id="sit_remaining_header"> Sit remaining </th>
@@ -17,10 +17,10 @@
       <td><%= teleporter.departure %></td>
       <td><%= teleporter.destination %></td>
 			<td><%= teleporter.count_remaining_seat %></td>
-			<td><%= link_to 'More info', '/'%></td>
+			<td><%= link_to 'More info', teleporter_path(teleporter)%></td>
     </tr>
   	<% end %>
 	</tbody>
 </table>
 
-{params[:order] == "release_date" ? {:class => "hilite"} : {}}
+

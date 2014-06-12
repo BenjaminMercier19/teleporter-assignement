@@ -5,4 +5,8 @@ class Teleporter < ActiveRecord::Base
 		3 - bookings.size
 	end
 
+	def full?
+		bookings.size == 3
+	end
+
 end
