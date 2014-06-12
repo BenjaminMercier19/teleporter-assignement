@@ -1,2 +1,8 @@
 class Teleporter < ActiveRecord::Base
+	has_many :bookings
+
+	def count_remaining_seat
+		3 - bookings.size
+	end
+
 end

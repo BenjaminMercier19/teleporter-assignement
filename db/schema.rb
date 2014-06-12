@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140611104021) do
+ActiveRecord::Schema.define(version: 20140612084754) do
+
+  create_table "bookings", force: true do |t|
+    t.integer  "number"
+    t.integer  "customer_id"
+    t.integer  "teleporter_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "customers", force: true do |t|
+    t.string   "name"
+    t.string   "mail"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "places", force: true do |t|
     t.string   "name"

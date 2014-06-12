@@ -3,6 +3,7 @@
 <table id="teleporters">
 	<thead>
 		<tr>
+			<th id="teleport_number_header"> From </th>
 			<th id="from_header"> From </th>
 			<th id="to_header"> To </th>
 			<th id="sit_remaining_header"> Sit remaining </th>
@@ -11,12 +12,15 @@
 	</thead>
 	<tbody>
 		<% @teleporters.each do |teleporter| %>
-    <tr>
+    <tr class="<%= (teleporter.full?)? 'full':'free' %>">
+			<td><%= teleporter.number %></td>
       <td><%= teleporter.departure %></td>
       <td><%= teleporter.destination %></td>
-			<td>0</td>
+			<td><%= teleporter.count_remaining_seat %></td>
 			<td><%= link_to 'More info', '/'%></td>
     </tr>
   	<% end %>
 	</tbody>
 </table>
+
+{params[:order] == "release_date" ? {:class => "hilite"} : {}}
