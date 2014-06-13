@@ -1,0 +1,45 @@
+<h1>Teleporter number: <%= @teleporter.number %></h1>
+<table id="teleporter_#{@teleporter_id}" class="table table-striped">
+	<thead>
+		<tr>
+			<th id="teleport_number_header"> Teleport number </th>
+			<th id="from_header"> From </th>
+			<th id="to_header"> To </th>
+			<th id="seat_remaining_header"> Seat remaining </th>
+		</tr>
+	</thead>
+	<tbody>
+    <tr>
+			<td><%= @teleporter.number %></td>
+      <td><%= @teleporter.departure %></td>
+      <td><%= @teleporter.destination %></td>
+			<td><%= @teleporter.count_remaining_seat %></td>
+    </tr>
+	</tbody>
+</table>
+<h2>Who's travelling in this teleporter?</h2>
+<table id="customers_teleporter_#{@teleporter_id}" class="table table-stripped">
+	<thead>
+		<tr>
+			<th id="name_header"> Name </th>
+			<th id="mail_header"> Mail </th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @customers.each do |customer| %>
+    <tr>
+			<td><%= customer.name %></td>
+      <td><%= mail_to customer.mail, "Write to this customer", subject:"About teleportation number #{@teleporter_number}"%></td>
+    </tr>
+		<% end %>
+	</tbody>
+</table>
+<p><%= link_to 'Book this one', new_booking_path(@teleporter) %></p>
+
+<% if flash[:notice] != nil %>
+    <div class="alert alert-success">
+			<%= flash[:notice] %>
+		</div>
+<% end %>
+
+<%= link_to 'Back to search', bookings_index_path, class: "btn btn-primary" %>

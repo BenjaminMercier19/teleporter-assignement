@@ -1,17 +1,19 @@
 <h1>Choose your travel</h1>
 
-	<%= form_tag("/bookings/search", method: "get") do %>
-		<select name="departure_id">
-			<%= @places.each do |places| %>
-				<option value="<%= places.id %>"><%= places.name %></option>
-			<% end %>
-		</select>
+<%= form_tag("/bookings/search", method: "get") do %>
 
-		<select name="destination_id">
-			<%= @places.each do |places| %>
-				<option value="<%= places.id %>"><%= places.name %></option>
-			<% end %>
-		</select>
-		<%= submit_tag("Search") %>
-	<% end %>
+	<select name="departure_id">
+		<%= @places.each do |places| %>
+			<option value="<%= places.id %>"><%= places.name %></option>
+		<% end %>
+	</select>
 
+	<select name="destination_id">
+		<%= @places.each do |places| %>
+			<option value="<%= places.id %>"><%= places.name %></option>
+		<% end %>
+	</select>
+
+	<%= submit_tag("Search") %>
+
+<% end %>

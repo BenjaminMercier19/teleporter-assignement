@@ -1,0 +1,5 @@
+<h1> No results found </h1>
+
+<div class="alert alert-error">Please try another travel to find a teleporter for you !</div>
+
+<%= link_to 'Back to search', bookings_index_path %>

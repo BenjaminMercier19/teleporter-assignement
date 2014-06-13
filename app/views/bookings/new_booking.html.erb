@@ -1,0 +1,20 @@
+<h1>Book you teleportation</h1>
+
+<%= form_tag(create_path(@teleporter), method: "post") do %>
+	<%= label_tag 'name_label', 'Your name' %>
+	<%= text_field_tag 'name', nil, placeholder: 'Enter name' %>
+
+	<%= label_tag 'mail_label', 'Your mail' %>
+	<%= text_field_tag 'mail', nil, placeholder: 'Enter mail' %>
+	<%= submit_tag "Book", class: "btn btn-success" %>
+<% end %>
+
+
+<% if flash[:error] != nil %>
+    <div class="alert alert-danger">
+			<%= flash[:error] %>
+		</div>
+<% end %>
+
+
+<%= link_to 'Back to search', bookings_index_path, class: "btn btn-primary" %>

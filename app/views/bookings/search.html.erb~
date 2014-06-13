@@ -1,18 +1,18 @@
 <h1> Choose your teleporter </h1>
 
-<table id="teleporters">
+<table id="teleporters" class="table table-stripped">
 	<thead>
 		<tr>
 			<th id="teleport_number_header"> Teleport number </th>
 			<th id="from_header"> From </th>
 			<th id="to_header"> To </th>
-			<th id="sit_remaining_header"> Sit remaining </th>
+			<th id="seat_remaining_header"> Seat remaining </th>
 			<th> More info </th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @teleporters.each do |teleporter| %>
-    <tr class="<%= (teleporter.full?)? 'full':'free' %>">
+    <tr class="<%= (teleporter.full?)? 'danger':'' %>">
 			<td><%= teleporter.number %></td>
       <td><%= teleporter.departure %></td>
       <td><%= teleporter.destination %></td>

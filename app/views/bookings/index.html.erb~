@@ -1,38 +1,18 @@
 <h1>Choose your travel</h1>
 
-	<%= form_tag("/bookings/search", method: "get") do %>
-		<select name="departure_id">
-			<%= @places.each do |places| %>
-				<option value="<%= places.id %>"><%= places.name %></option>
-			<% end %>
-		</select>
+<%= form_tag("/bookings/search", method: "get") do %>
+	<select name="departure_id">
+		<%= @places.each do |places| %>
+			<option value="<%= places.id %>"><%= places.name %></option>
+		<% end %>
+	</select>
 
-		<select name="destination_id">
-			<%= @places.each do |places| %>
-				<option value="<%= places.id %>"><%= places.name %></option>
-			<% end %>
-		</select>
-		<%= submit_tag("Search") %>
-	<% end %>
+	<select name="destination_id">
+		<%= @places.each do |places| %>
+			<option value="<%= places.id %>"><%= places.name %></option>
+		<% end %>
+	</select>
 
+	<%= submit_tag("Search") %>
 
-<table id="teleporters">
-	<thead>
-		<tr>
-			<th id="from_header"> From </th>
-			<th id="to_header"> To </th>
-			<th id="sit_remaining_header"> Sit remaining </th>
-			<th> More info </th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @teleporters.each do |teleporter| %>
-    <tr>
-      <td><%= teleporter.departure %></td>
-      <td><%= teleporter.destination %></td>
-			<td>0</td>
-			<td><%= link_to 'More info', '/'%></td>
-    </tr>
-  	<% end %>
-	</tbody>
-</table>
+<% end %>
