@@ -6,13 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-10.times do |i|
+5.times do |i|
   Place.create(name: "Place ##{i}")
 end
 
 @places = Place.count
 
-10.times do |i|
+50.times do |i|
 	$dep_id = Random.new.rand(1..Place.count)
 	$dest_id = Random.new.rand(1..Place.count)
 	while $dest_id == $dep_id  do
@@ -32,12 +32,13 @@ Customer.create([{name: 'jean', mail: 'jean.j@fake.com'},
 									{name: 'anne', mail: 'anne.j@fake.com'}, 
 									{name: 'daniel', mail: 'daniel.j@fake.com'}])
 
-Booking.create([{number: rand(1000..10000), customer: 1, teleporter: 1},
-								{number: rand(1000..10000), customer: 2, teleporter: 1},
-								{number: rand(1000..10000), customer: 3, teleporter: 1},
-								{number: rand(1000..10000), customer: 6, teleporter: 2},
-								{number: rand(1000..10000), customer: 4, teleporter: 2},
-								{number: rand(1000..10000), customer: 7, teleporter: 6},
-								{number: rand(1000..10000), customer: 5, teleporter: 7},
-								{number: rand(1000..10000), customer: 1, teleporter: 7}])
+Booking.create([{number: rand(1000..10000), customer_id: 1, teleporter_id: 1},
+								{number: rand(1000..10000), customer_id: 2, teleporter_id: 1},
+								{number: rand(1000..10000), customer_id: 3, teleporter_id: 1},
+								{number: rand(1000..10000), customer_id: 4, teleporter_id: 2},
+								{number: rand(1000..10000), customer_id: 5, teleporter_id: 7},
+								{number: rand(1000..10000), customer_id: 6, teleporter_id: 2},
+								{number: rand(1000..10000), customer_id: 7, teleporter_id: 6},
+								{number: rand(1000..10000), customer_id: 8, teleporter_id: 7},
+								{number: rand(1000..10000), customer_id: 9, teleporter_id: 7}])
 
